@@ -29,7 +29,7 @@ keyPoint2, des2 = orb_detector.detectAndCompute(img_ref_cinza, None)
 
 # Display keypoints for reference image in green color
 imgKp_Ref = cv2.drawKeypoints(img_referencia, keyPoint2, 0, (0,222,0), None)
-imgKp_Ref = cv2.resize(imgKp_Ref, (largura//2, altura//2))
+# imgKp_Ref = cv2.resize(imgKp_Ref, (largura//2, altura//2))
 
 # cv2.imshow('Key Points', imgKp_Ref)
 # cv2.waitKey(0)
@@ -51,7 +51,7 @@ no_of_matches = len(matches)
 
 # Display only 100 best matches {good[:100}
 imgMatch = cv2.drawMatches(img_dist_cinza, keyPoint2, img_ref_cinza, keyPoint1, matches[:100], None, flags = 2)
-imgMatch = cv2.resize(imgMatch, (largura//3, altura//3))
+# imgMatch = cv2.resize(imgMatch, (largura//3, altura//3))
 
 # cv2.imshow('Image Match', imgMatch)
 # cv2.waitKey(0)
@@ -78,7 +78,7 @@ aligned_img = cv2.resize(aligned_img, (largura, altura))
 imgTest_cp = img_dist_cinza.copy()
 imgTest_cp = cv2.resize(imgTest_cp, (largura//3, altura//3))
 # Save the align image output.
-cv2.imwrite('saida.jpg', aligned_img)
+cv2.imwrite('Saida/saida.jpg', aligned_img)
 
 # cv2.imshow('Input Image', imgTest_cp)
 # cv2.imshow('Output Image', aligned_img)

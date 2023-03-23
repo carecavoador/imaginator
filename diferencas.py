@@ -8,7 +8,8 @@ import cv2
 
 
 img_referencia = "Entrada/original.jpg"
-img_teste = "saida.jpg"
+img_teste = "Saida/alterado.jpg"
+img_teste = "Saida/saida.jpg"
 
 # load the two input images
 imageA = cv2.imread(img_referencia)
@@ -43,11 +44,16 @@ for c in cnts:
     cv2.rectangle(imageB, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
 # Resize images to display
-imageA = cv2.resize(imageA, (ALTURA//3, LARGURA//3))
+# imageA = cv2.resize(imageA, (ALTURA//3, LARGURA//3))
 
 # show the output images
-cv2.imshow("Original", imageA)
-cv2.imshow("Modified", imageB)
-cv2.imshow("Diff", diff)
-cv2.imshow("Thresh", thresh)
-cv2.waitKey(0)
+# cv2.imshow("Original", imageA)
+# cv2.imshow("Modified", imageB)
+# cv2.imshow("Diff", diff)
+# cv2.imshow("Thresh", thresh)
+# cv2.waitKey(0)
+
+cv2.imwrite("Diferencas/diff.jpg", diff)
+cv2.imwrite("Diferencas/threshold.jpg", thresh)
+cv2.imwrite("Diferencas/original.jpg", imageA)
+cv2.imwrite("Diferencas/modificado.jpg", imageB)
